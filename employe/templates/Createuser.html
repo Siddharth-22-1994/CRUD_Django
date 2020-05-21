@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    h3
+    {
+    margin-left:280px;
+    }
+</style>
+<body>
+<h3>Create New User</h3>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form }}
+    <button type="submit"> Save </button>
+
+</form>
+
+</body>
+</html>

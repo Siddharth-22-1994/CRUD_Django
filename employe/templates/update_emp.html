@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    {% for emp in employe %}
+    <form method="POST">
+
+        Name:<input type="text" value="{{ emp.E_name }}"><br>
+        E.Id:<input type="text" value="{{ emp.E_Id }}"><br>
+        Address:<input type="text" value="{{ emp.E_address }}"><br>
+        Salary:<input type="number" value="{{ emp.E_salary }}"><br>
+        <button type="submit"> Submit </button>
+
+    </form>
+
+    {% endfor %}
+</ul>
+</body>
+</html>

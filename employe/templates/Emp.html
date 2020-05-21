@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table
+        {
+        margin-left:310px;
+        margin-top:20px;
+        width:50%;
+        }
+        th,td
+        {
+        text-align:center;
+        }
+        button
+        {
+        margin-left:880px;
+        font-size:15px;
+        border-radius:5px;
+        }
+        button a
+        {
+        text-decoration:none;
+        color:black;
+        }
+        td a
+        {
+        text-decoration:none;
+        }
+        h3
+        {
+        margin-left:580px;
+        margin-top:30px;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+<h3>Employee Details </h3>
+<div class="container-fluid">
+
+    <button><a href="{% url 'createemp' %}"> Add Employee </a></button>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Address</th>
+            <th>Salary</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for val in Empdet %}
+        <tr>
+            <td>{{ val.E_name }}</td>
+            <td>{{ val.E_Id }}</td>
+            <td>{{ val.E_address }}</td>
+            <td>{{ val.E_salary }}</td>
+            <td><a href="{% url 'delete' val.id %}">Delete</a></td>
+            <td><a href="{% url 'update' val.id %}">Update</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+</div>
+{% endblock %}
+</body>
+</html>
