@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
-
-# Create your views here.
 from employe.forms import Empfrom
 from employe.models import Emplyee
-
 
 def empbase(request):
     Empdet = Emplyee.objects.all()
@@ -16,7 +13,6 @@ def createemp(request):
         form.save()
         return redirect('empdet')
 
-    # The below line is only to denote an invalid form in case failur of addition of new employee
     return render(request, 'Createuser.html', {'form': form})
 
 def Update_emp(request, emp_id):
@@ -33,4 +29,3 @@ def delete_emp(request, emp_id):
     employe.delete()
 
     return redirect('empdet')
-
